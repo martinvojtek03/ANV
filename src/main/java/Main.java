@@ -1,8 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        // Volání požadované v zadání:
-        System.out.println(DrinkFactory.createDrink("coffee").serve() + " in " + CafeConfig.getInstance().getCafeName());
+        CustomDrink customDrink = new CustomDrink.Builder("coffee").milk().sugar().build();
 
-        // Výstup v konzoli bude: Serving Tea in Smart Café Liberec
+        System.out.println(customDrink + " in " + CafeConfig.getInstance().getCafeName());
+
+        // Výstup v konzoli: Serving Coffee, milk, sugar in Smart Café Liberec
     }
 }
